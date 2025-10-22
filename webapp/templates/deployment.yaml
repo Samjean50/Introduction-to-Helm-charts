@@ -46,6 +46,10 @@ spec:
               path: /
               port: http
           resources:
+          requests:
+            memory: "180Mi"
+            cpu: "120m"
+
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
